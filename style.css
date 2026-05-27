@@ -498,6 +498,116 @@ button { cursor: pointer; font-family: inherit; }
   height: 48px;
 }
 
+/* ===== REVIEWS SECTION ===== */
+.reviews-section {
+  background: #FAFAFA;
+  border-top: 1px solid var(--border);
+  padding: 64px 32px;
+}
+.reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reviews-big-score {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+}
+.reviews-stars-big {
+  display: flex;
+  gap: 3px;
+}
+.reviews-count {
+  font-size: 13px;
+  color: var(--light);
+}
+.reviews-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+}
+.review-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.review-card__stars {
+  display: flex;
+  gap: 2px;
+}
+.review-card__text {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.75;
+  flex: 1;
+  font-style: italic;
+}
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.review-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F0EDE8;
+  color: var(--coffee);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.review-card__author strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.review-card__author span {
+  font-size: 11px;
+  color: var(--light);
+}
+
+@media (max-width: 1024px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-header { flex-direction: column; align-items: flex-start; }
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--dark);

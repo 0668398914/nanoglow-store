@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NanoGlow Spray Pro — NILIST</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    FREE DELIVERY &bull; 10,000+ satisfied customers
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <nav class="header__nav">
+        <a href="#">NEW ARRIVALS</a>
+        <a href="#">SKINCARE</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT</a>
+      </nav>
+      <a href="#" class="header__logo">NILIST.</a>
+      <div class="header__icons">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Account">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="product-page">
+
+    <!-- IMAGES -->
+    <div class="product-gallery">
+      <div class="gallery-grid">
+        <div class="gallery-main">
+          <img src="images/blue.png" alt="NanoGlow Blue" id="mainImg" class="gallery-main__img" />
+        </div>
+        <div class="gallery-thumb-col">
+          <div class="gallery-thumb active" onclick="setThumb(this, 'images/blue.png')">
+            <img src="images/blue.png" alt="Blue" />
+          </div>
+          <div class="gallery-thumb" onclick="setThumb(this, 'images/pink.png')">
+            <img src="images/pink.png" alt="Pink" />
+          </div>
+          <div class="gallery-thumb" onclick="setThumb(this, 'images/blue.png')">
+            <img src="images/blue.png" alt="Blue side" />
+          </div>
+          <div class="gallery-thumb" onclick="setThumb(this, 'images/pink.png')">
+            <img src="images/pink.png" alt="Pink side" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="product-details">
+
+      <!-- Rating -->
+      <div class="product-rating">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="rating-text">4.9 (2,284 Reviews)</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="product-title">NanoGlow Spray Pro</h1>
+
+      <!-- Price -->
+      <div class="product-price">
+        <span class="price-old" id="priceOld">$39.99</span>
+        <span class="price-new" id="priceNew">$19.99</span>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Color -->
+      <div class="option-group">
+        <div class="option-label">
+          Color — <strong id="colorName">Blue</strong>
+        </div>
+        <div class="color-swatches">
+          <button class="color-swatch active" id="swatchBlue" onclick="selectColor('blue')" aria-label="Blue">
+            <img src="images/blue.png" alt="Blue" />
+          </button>
+          <button class="color-swatch" id="swatchPink" onclick="selectColor('pink')" aria-label="Pink">
+            <img src="images/pink.png" alt="Pink" />
+          </button>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Stock -->
+      <div class="stock-status">
+        <span class="stock-dot"></span>
+        In Stock — Ready to Ship
+      </div>
+
+      <!-- Qty + Add to Cart -->
+      <div class="purchase-row">
+        <div class="qty-box">
+          <button onclick="changeQty(-1)">−</button>
+          <span id="qtyDisplay">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+        <button class="add-to-cart" onclick="addToCart()">ADD TO CART</button>
+      </div>
+
+      <!-- Payment icons -->
+      <div class="payment-icons">
+        <span class="pay-badge">VISA</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">Amex</span>
+        <span class="pay-badge">G Pay</span>
+        <span class="pay-badge">Apple Pay</span>
+        <span class="pay-badge">PayPal</span>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Accordion: Description -->
+      <div class="accordion">
+        <button class="accordion__head" onclick="toggleAccordion(this)">
+          Product description
+          <svg class="acc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion__body">
+          <p>The NanoGlow Spray Pro uses ultrafine 0.26 µm atomization technology to deliver your favorite skincare liquids — toners, serums, or thermal water — directly to your skin in a fine, even mist.</p>
+          <ul>
+            <li>Ultra-fine mist particle size: 0.26 µm</li>
+            <li>Tank capacity: 30 ml</li>
+            <li>Battery life: up to 2 hours</li>
+            <li>Charge time: approx. 1.5 hours via USB-C</li>
+            <li>Noise level: &lt; 45 dB</li>
+            <li>Material: anodized aluminum + food-grade plastic (BPA-free)</li>
+            <li>Available in Blue &amp; Pink</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion: Shipping -->
+      <div class="accordion">
+        <button class="accordion__head" onclick="toggleAccordion(this)">
+          Shipping &amp; Returns
+          <svg class="acc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion__body">
+          <p><strong>Free worldwide shipping</strong> on all orders.</p>
+          <p>Estimated delivery: <strong>7–14 business days</strong>.</p>
+          <p>Not satisfied? Return within <strong>30 days</strong> for a full refund — no questions asked.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__head">
+      <h3>Your Cart</h3>
+      <button onclick="closeCart()" class="icon-btn">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        Total: <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="add-to-cart" onclick="checkout()">CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal__box">
+      <div class="modal__icon">✓</div>
+      <h3>Order Placed!</h3>
+      <p>Thank you! Our team will contact you within 15 minutes to confirm your order.</p>
+      <button class="add-to-cart" onclick="closeModal()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo">NILIST.</span>
+      <div class="footer__links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns &amp; Refunds</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Nilist. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

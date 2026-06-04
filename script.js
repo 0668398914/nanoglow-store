@@ -35,17 +35,26 @@ function pickSize(btn, size) {
 
 /* ===== GALLERY THUMBS ===== */
 function setImg(el, src) {
-  document.querySelectorAll('.strip-thumb').forEach(t => t.classList.remove('active'));
+  const thumbs = document.querySelectorAll('.strip-thumb');
+  thumbs.forEach(t => t.classList.remove('active'));
   el.classList.add('active');
+  currentThumbIndex = Array.from(thumbs).indexOf(el);
   const img = document.getElementById('mainImg');
   img.style.opacity = '0';
   setTimeout(() => { img.src = src; img.style.opacity = '1'; }, 200);
+  // scroll thumb into view
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 }
 
-/* ===== STRIP SCROLL ===== */
+/* ===== ARROWS — cycle through thumbs ===== */
+let currentThumbIndex = 0;
+
 function slideStrip(dir) {
-  const strip = document.getElementById('strip');
-  strip.scrollBy({ left: dir * 160, behavior: 'smooth' });
+  const thumbs = Array.from(document.querySelectorAll('.strip-thumb'));
+  currentThumbIndex = (currentThumbIndex + dir + thumbs.length) % thumbs.length;
+  const target = thumbs[currentThumbIndex];
+  const src = target.querySelector('img').src;
+  setImg(target, src);
 }
 
 /* ===== TABS ===== */

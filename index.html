@@ -1,333 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NanoGlow Spray Pro — NILIST</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NanoGlow Spray Pro — Portable Nano Mist Sprayer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announce-bar">
-    FREE DELIVERY &bull; 10,000+ satisfied customers
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce__track">
+    <span>⚡ 1 Sold Every 3 Minutes &nbsp;•&nbsp; ⭐ 4.9/5 Rated by 2,000+ Customers &nbsp;•&nbsp; 🚚 Free Worldwide Shipping &nbsp;•&nbsp; ⚡ 1 Sold Every 3 Minutes &nbsp;•&nbsp; ⭐ 4.9/5 Rated by 2,000+ Customers &nbsp;•&nbsp; 🚚 Free Worldwide Shipping</span>
   </div>
+</div>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header__inner">
-      <nav class="header__nav">
-        <a href="#">NEW ARRIVALS</a>
-        <a href="#">SKINCARE</a>
-        <a href="#">ABOUT US</a>
-        <a href="#">CONTACT</a>
-      </nav>
-      <a href="#" class="header__logo">NILIST.</a>
-      <div class="header__icons">
-        <button class="icon-btn" aria-label="Search">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        </button>
-        <button class="icon-btn" aria-label="Account">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <button class="icon-btn cart-btn" aria-label="Cart">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-      </div>
+<!-- HEADER -->
+<header class="header">
+  <div class="header__inner">
+    <nav class="header__nav">
+      <a href="#">Home</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#" class="logo">NILIST<span>.</span></a>
+    <div class="header__right">
+      <button class="icon-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartBtn">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger">&#9776;</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- MAIN CONTENT -->
-  <main class="product-page">
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#">Home</a>
+  <a href="#benefits">Benefits</a>
+  <a href="#how">How It Works</a>
+  <a href="#faq">FAQ</a>
+</div>
 
-    <!-- IMAGES -->
-    <div class="product-gallery">
-      <div class="gallery-grid">
-        <div class="gallery-main">
-          <img src="images/blue.png" alt="NanoGlow Blue" id="mainImg" class="gallery-main__img" />
-        </div>
-        <div class="gallery-thumb-col">
-          <div class="gallery-thumb active" onclick="setThumb(this, 'images/blue.png')">
-            <img src="images/blue.png" alt="Blue" />
-          </div>
-          <div class="gallery-thumb" onclick="setThumb(this, 'images/pink.png')">
-            <img src="images/pink.png" alt="Pink" />
-          </div>
-          <div class="gallery-thumb" onclick="setThumb(this, 'images/blue.png')">
-            <img src="images/blue.png" alt="Blue side" />
-          </div>
-          <div class="gallery-thumb" onclick="setThumb(this, 'images/pink.png')">
-            <img src="images/pink.png" alt="Pink side" />
-          </div>
-        </div>
+<!-- PRODUCT HERO -->
+<section class="product-hero">
+  <div class="product-hero__inner">
+
+    <!-- GALLERY -->
+    <div class="gallery" id="gallery">
+      <div class="gallery__thumbs" id="thumbs">
+        <button class="thumb active" onclick="setImg(this,'images/blue.png')"><img src="images/blue.png" alt=""/></button>
+        <button class="thumb" onclick="setImg(this,'images/pink.png')"><img src="images/pink.png" alt=""/></button>
+        <button class="thumb" onclick="setImg(this,'images/blue.png')"><img src="images/blue.png" alt=""/></button>
+        <button class="thumb" onclick="setImg(this,'images/pink.png')"><img src="images/pink.png" alt=""/></button>
+      </div>
+      <div class="gallery__main">
+        <div class="gallery__badge">SALE</div>
+        <img src="images/blue.png" alt="NanoGlow Spray Pro" id="mainImg"/>
       </div>
     </div>
 
     <!-- DETAILS -->
-    <div class="product-details">
+    <div class="details">
 
-      <!-- Rating -->
-      <div class="product-rating">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#C8860A" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <!-- Stars -->
+      <div class="details__rating">
+        <div class="stars">★★★★★</div>
+        <span>4.9/5 &nbsp;|&nbsp; <a href="#reviews">2,284 Reviews</a></span>
+      </div>
+
+      <h1 class="details__title">NanoGlow Spray Pro</h1>
+      <p class="details__sub">120 ultra-fine mist sessions for hydration, glow &amp; makeup setting.</p>
+
+      <!-- Expert -->
+      <div class="expert-quote">
+        <div class="expert-quote__avatar">👩‍⚕️</div>
+        <div>
+          <p>"The NanoGlow uses 0.26 µm particles — finer than most professional devices. It absorbs instantly without disturbing makeup or leaving residue."</p>
+          <strong>Dr. Emma Clarke, Certified Dermatologist</strong>
         </div>
-        <span class="rating-text">4.9 (2,284 Reviews)</span>
       </div>
 
-      <!-- Title -->
-      <h1 class="product-title">NanoGlow Spray Pro</h1>
-
-      <!-- Price -->
-      <div class="product-price">
-        <span class="price-old" id="priceOld">$39.99</span>
-        <span class="price-new" id="priceNew">$19.99</span>
+      <!-- Bundle selector -->
+      <div class="bundle-label">Choose Your Bundle</div>
+      <div class="bundles" id="bundles">
+        <label class="bundle" id="b1">
+          <input type="radio" name="bundle" value="1" checked onchange="selectBundle(1)"/>
+          <div class="bundle__inner">
+            <div class="bundle__qty">1 Device</div>
+            <div class="bundle__price"><span class="bundle__new">$19.99</span> <span class="bundle__old">$39.99</span></div>
+            <div class="bundle__per">$19.99 each</div>
+          </div>
+        </label>
+        <label class="bundle popular" id="b2">
+          <div class="bundle__tag">MOST POPULAR</div>
+          <input type="radio" name="bundle" value="2" onchange="selectBundle(2)"/>
+          <div class="bundle__inner">
+            <div class="bundle__qty">2 Devices</div>
+            <div class="bundle__price"><span class="bundle__new">$34.99</span> <span class="bundle__old">$79.98</span></div>
+            <div class="bundle__per">$17.49 each — Save 13%</div>
+          </div>
+        </label>
+        <label class="bundle" id="b3">
+          <div class="bundle__tag best">BEST VALUE</div>
+          <input type="radio" name="bundle" value="3" onchange="selectBundle(3)"/>
+          <div class="bundle__inner">
+            <div class="bundle__qty">3 Devices</div>
+            <div class="bundle__price"><span class="bundle__new">$47.99</span> <span class="bundle__old">$119.97</span></div>
+            <div class="bundle__per">$15.99 each — Save 20%</div>
+          </div>
+        </label>
       </div>
-
-      <hr class="divider" />
 
       <!-- Color -->
-      <div class="option-group">
-        <div class="option-label">
-          Color — <strong id="colorName">Blue</strong>
-        </div>
+      <div class="option-row">
+        <span class="option-label">Color: <strong id="colorLabel">Blue</strong></span>
         <div class="color-swatches">
-          <button class="color-swatch active" id="swatchBlue" onclick="selectColor('blue')" aria-label="Blue">
-            <img src="images/blue.png" alt="Blue" />
+          <button class="cswatch active" id="swBlue" onclick="pickColor('blue')" title="Blue">
+            <img src="images/blue.png" alt="Blue"/>
           </button>
-          <button class="color-swatch" id="swatchPink" onclick="selectColor('pink')" aria-label="Pink">
-            <img src="images/pink.png" alt="Pink" />
+          <button class="cswatch" id="swPink" onclick="pickColor('pink')" title="Pink">
+            <img src="images/pink.png" alt="Pink"/>
           </button>
         </div>
       </div>
 
-      <hr class="divider" />
-
-      <!-- Stock -->
-      <div class="stock-status">
-        <span class="stock-dot"></span>
-        In Stock — Ready to Ship
+      <!-- Price display -->
+      <div class="price-display">
+        <span class="price-display__new" id="pdNew">$19.99</span>
+        <span class="price-display__old" id="pdOld">$39.99</span>
+        <span class="price-display__save" id="pdSave">You Save $20.00 (50%)</span>
       </div>
 
-      <!-- Qty + Add to Cart -->
-      <div class="purchase-row">
-        <div class="qty-box">
-          <button onclick="changeQty(-1)">−</button>
-          <span id="qtyDisplay">1</span>
-          <button onclick="changeQty(1)">+</button>
+      <!-- CTA -->
+      <button class="cta-btn" onclick="addToCart()">
+        ADD TO CART &nbsp;—&nbsp; <span id="ctaPrice">$19.99</span>
+      </button>
+      <div class="est-delivery">🚚 Est. Delivery in 7–10 business days with Free Shipping</div>
+
+      <!-- Trust bar -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <span class="trust-icon">🛡️</span>
+          <span>365-Day<br/>Money-Back</span>
         </div>
-        <button class="add-to-cart" onclick="addToCart()">ADD TO CART</button>
-      </div>
-
-      <!-- Payment icons -->
-      <div class="payment-icons">
-        <span class="pay-badge">VISA</span>
-        <span class="pay-badge">Mastercard</span>
-        <span class="pay-badge">Amex</span>
-        <span class="pay-badge">G Pay</span>
-        <span class="pay-badge">Apple Pay</span>
-        <span class="pay-badge">PayPal</span>
-      </div>
-
-      <hr class="divider" />
-
-      <!-- Accordion: Description -->
-      <div class="accordion">
-        <button class="accordion__head" onclick="toggleAccordion(this)">
-          Product description
-          <svg class="acc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="accordion__body">
-          <p>The NanoGlow Spray Pro uses ultrafine 0.26 µm atomization technology to deliver your favorite skincare liquids — toners, serums, or thermal water — directly to your skin in a fine, even mist.</p>
-          <ul>
-            <li>Ultra-fine mist particle size: 0.26 µm</li>
-            <li>Tank capacity: 30 ml</li>
-            <li>Battery life: up to 2 hours</li>
-            <li>Charge time: approx. 1.5 hours via USB-C</li>
-            <li>Noise level: &lt; 45 dB</li>
-            <li>Material: anodized aluminum + food-grade plastic (BPA-free)</li>
-            <li>Available in Blue &amp; Pink</li>
-          </ul>
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <span>Secure<br/>Checkout</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🚀</span>
+          <span>Fast<br/>Shipping</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⭐</span>
+          <span>4.9/5<br/>Rating</span>
         </div>
       </div>
 
-      <!-- Accordion: Shipping -->
-      <div class="accordion">
-        <button class="accordion__head" onclick="toggleAccordion(this)">
-          Shipping &amp; Returns
-          <svg class="acc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="accordion__body">
-          <p><strong>Free worldwide shipping</strong> on all orders.</p>
-          <p>Estimated delivery: <strong>7–14 business days</strong>.</p>
-          <p>Not satisfied? Return within <strong>30 days</strong> for a full refund — no questions asked.</p>
+      <!-- Accordion -->
+      <div class="acc-group">
+        <div class="acc">
+          <button class="acc__head" onclick="toggleAcc(this)">
+            What's in the box?
+            <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="acc__body">
+            <ul>
+              <li>1× NanoGlow Spray Pro device</li>
+              <li>1× USB-C charging cable</li>
+              <li>1× Cleaning brush</li>
+              <li>1× User manual (EN)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" onclick="toggleAcc(this)">
+            Shipping &amp; Returns
+            <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="acc__body">
+            <p><strong>Free worldwide shipping</strong> on all orders. Delivery 7–14 business days.</p>
+            <p>Not happy? Return within <strong>365 days</strong> for a full refund — no questions asked.</p>
+          </div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" onclick="toggleAcc(this)">
+            How to use
+            <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="acc__body">
+            <p>Fill the 30 ml tank with your favorite toner, serum or thermal water. Hold 15–20 cm from face and press the button. Use for 15–30 seconds morning and evening.</p>
+          </div>
         </div>
       </div>
 
-    </div>
-  </main>
-
-  <!-- REVIEWS SECTION -->
-  <section class="reviews-section">
-    <div class="reviews-container">
-      <div class="reviews-header">
-        <div class="reviews-summary">
-          <span class="reviews-big-score">4.9</span>
-          <div class="reviews-stars-big">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="22" height="22"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="22" height="22"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="22" height="22"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="22" height="22"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="22" height="22"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="reviews-count">Based on 2,284 reviews</span>
-        </div>
-        <h2 class="reviews-title">Customer Reviews</h2>
-      </div>
-
-      <div class="reviews-grid">
-
-        <div class="review-card">
-          <div class="review-card__stars">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-card__text">"I was surprised by the quality and how useful this small object is, efficient and economical. You decide how much you want in the dispenser, and after adding oil to it, it gradually releases the product onto the scalp. A perfect 1000! Very good, highly recommended!"</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">S</div>
-            <div>
-              <strong>Sarah M.</strong>
-              <span>United States &#10003; Verified</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card__stars">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#E0E0E0" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-card__text">"Everything is perfectly packaged. The dispenser is small, the applicator tips are a bit stiff, but overall it's comfortable to use. It came in a branded box."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">E</div>
-            <div>
-              <strong>Emma R.</strong>
-              <span>United Kingdom &#10003; Verified</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card__stars">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#E0E0E0" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-card__text">"Takes a little bit of getting used to but it is a truly excellent product compared to applying rogaine manually!"</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">J</div>
-            <div>
-              <strong>James K.</strong>
-              <span>Canada &#10003; Verified</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card__stars">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-card__text">"Cool applicator. It's very pleasant to do scalp massage with it. Minimal product consumption, it applies directly to the scalp, avoiding hair."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">L</div>
-            <div>
-              <strong>Laura T.</strong>
-              <span>Australia &#10003; Verified</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card__stars">
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="#C8860A" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-card__text">"Everything looks good, there are instructions, I haven't tried the applicator yet, fast delivery."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">M</div>
-            <div>
-              <strong>Mia W.</strong>
-              <span>Germany &#10003; Verified</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CART DRAWER -->
-  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-  <div class="cart-drawer" id="cartDrawer">
-    <div class="cart-drawer__head">
-      <h3>Your Cart</h3>
-      <button onclick="closeCart()" class="icon-btn">✕</button>
-    </div>
-    <div class="cart-drawer__items" id="cartItems">
-      <p class="cart-empty">Your cart is empty.</p>
-    </div>
-    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
-      <div class="cart-total">
-        Total: <strong id="cartTotal">$0.00</strong>
-      </div>
-      <button class="add-to-cart" onclick="checkout()">CHECKOUT</button>
     </div>
   </div>
+</section>
 
-  <!-- SUCCESS MODAL -->
-  <div class="modal" id="modal">
-    <div class="modal__box">
-      <div class="modal__icon">✓</div>
-      <h3>Order Placed!</h3>
-      <p>Thank you! Our team will contact you within 15 minutes to confirm your order.</p>
-      <button class="add-to-cart" onclick="closeModal()">Continue Shopping</button>
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="stats-bar__inner">
+    <div class="stat-item">
+      <span class="stat-num">94%</span>
+      <span class="stat-txt">noticed softer skin in 7 days</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">91%</span>
+      <span class="stat-txt">said makeup lasts longer</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">89%</span>
+      <span class="stat-txt">reduced dry skin patches</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">97%</span>
+      <span class="stat-txt">would recommend to a friend</span>
     </div>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <span class="footer__logo">NILIST.</span>
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <div class="section-inner">
+    <p class="section-eyebrow">Why NanoGlow</p>
+    <h2 class="section-h2">One device. Six skin benefits.</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">💧</div>
+        <h4>Deep Hydration</h4>
+        <p>0.26 µm particles penetrate the skin barrier — far smaller than a standard moisturizer molecule.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <h4>Instant Glow</h4>
+        <p>Micro-mist instantly refreshes and plumps skin, giving a dewy, radiant look in 30 seconds.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💄</div>
+        <h4>Makeup Setting</h4>
+        <p>Spray over finished makeup for professional-grade longevity and a dewy, fresh-faced finish.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌡️</div>
+        <h4>Cooling Relief</h4>
+        <p>Instant cooling effect reduces redness and sensitivity — perfect after sun exposure or exercise.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔇</div>
+        <h4>Whisper-Quiet</h4>
+        <p>Under 45 dB — use it anywhere without disturbing others. Office, airplane, gym.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h4>Long Battery Life</h4>
+        <p>2 hours continuous use on a single 90-minute USB-C charge. Built for your busy schedule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Science</p>
+    <h2 class="section-h2">Three stages of skin hydration<br/>in one daily mist</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h4>Ultra-Fine Atomization</h4>
+        <p>The piezoelectric vibration plate converts liquid into 0.26 µm particles — finer than your pores — for instant, effortless absorption.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h4>Deep Skin Penetration</h4>
+        <p>Nano-sized droplets bypass the outer skin layer, delivering active ingredients from your serum or toner directly where they're needed.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h4>Lasting Moisture Lock</h4>
+        <p>The micro-mist forms an invisible shield on the skin surface that locks in moisture for hours, not minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="section-inner">
+    <p class="section-eyebrow">Results Timeline</p>
+    <h2 class="section-h2">What to expect</h2>
+    <p class="timeline__note">98% of users who used NanoGlow consistently saw visible results within 4 weeks.</p>
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <div class="timeline-month">Week 1</div>
+        <h4>Setting the Foundation</h4>
+        <p>Skin feels immediately more refreshed and hydrated after each use. Tightness and dryness reduce noticeably.</p>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-month">Week 2</div>
+        <h4>Visible Difference</h4>
+        <p>Skin tone evens out. Fine lines appear plumper. Makeup applies more smoothly and lasts significantly longer.</p>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-month">Week 4+</div>
+        <h4>Long-Term Glow</h4>
+        <p>Consistent hydration improves skin barrier function. Skin looks healthier, more radiant, and feels softer to the touch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <p class="section-eyebrow">Customer Reviews</p>
+    <h2 class="section-h2">What our customers say</h2>
+    <div class="reviews-summary">
+      <div class="rs-score">4.9</div>
+      <div class="rs-right">
+        <div class="rs-stars">★★★★★</div>
+        <div class="rs-count">Based on 2,284 reviews</div>
+        <div class="rs-bars">
+          <div class="rs-bar"><span>5★</span><div class="bar"><div class="bar__fill" style="width:88%"></div></div><span>88%</span></div>
+          <div class="rs-bar"><span>4★</span><div class="bar"><div class="bar__fill" style="width:9%"></div></div><span>9%</span></div>
+          <div class="rs-bar"><span>3★</span><div class="bar"><div class="bar__fill" style="width:2%"></div></div><span>2%</span></div>
+          <div class="rs-bar"><span>2★</span><div class="bar"><div class="bar__fill" style="width:1%"></div></div><span>1%</span></div>
+          <div class="rs-bar"><span>1★</span><div class="bar"><div class="bar__fill" style="width:0%"></div></div><span>0%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="rc-stars">★★★★★</div>
+          <span class="rc-verified">✓ Verified Purchase</span>
+        </div>
+        <p class="rc-text">"I was surprised by the quality and how useful this small device is — efficient and economical. After adding my serum, it gradually releases the product right onto my face. A perfect 10! Highly recommended!"</p>
+        <div class="rc-meta">
+          <span>Skin type: Dry</span>
+          <span>Used for: 3 weeks</span>
+          <span>Result: Noticed in 5 days</span>
+        </div>
+        <div class="rc-author">
+          <div class="rc-avatar">S</div>
+          <div><strong>Sarah M.</strong><span>🇺🇸 United States</span></div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="rc-stars">★★★★<span style="color:#ddd">★</span></div>
+          <span class="rc-verified">✓ Verified Purchase</span>
+        </div>
+        <p class="rc-text">"Everything is perfectly packaged. The device is small and sleek, the nozzle tips are a little stiff at first but it's comfortable once broken in. Came in a beautiful branded box — great gift!"</p>
+        <div class="rc-meta">
+          <span>Skin type: Combination</span>
+          <span>Used for: 2 weeks</span>
+          <span>Result: Noticed in 7 days</span>
+        </div>
+        <div class="rc-author">
+          <div class="rc-avatar">E</div>
+          <div><strong>Emma R.</strong><span>🇬🇧 United Kingdom</span></div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="rc-stars">★★★★<span style="color:#ddd">★</span></div>
+          <span class="rc-verified">✓ Verified Purchase</span>
+        </div>
+        <p class="rc-text">"Takes a little bit of getting used to but it is a truly excellent product compared to applying serum manually. The mist is so fine you barely feel it — and the results are real."</p>
+        <div class="rc-meta">
+          <span>Skin type: Oily</span>
+          <span>Used for: 1 month</span>
+          <span>Result: Noticed in 10 days</span>
+        </div>
+        <div class="rc-author">
+          <div class="rc-avatar">J</div>
+          <div><strong>James K.</strong><span>🇨🇦 Canada</span></div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="rc-stars">★★★★★</div>
+          <span class="rc-verified">✓ Verified Purchase</span>
+        </div>
+        <p class="rc-text">"Love this applicator. It's very pleasant to use — like a mini facial treatment every morning. Minimal product consumption, applies directly to skin without wasting a drop. Amazing!"</p>
+        <div class="rc-meta">
+          <span>Skin type: Normal</span>
+          <span>Used for: 6 weeks</span>
+          <span>Result: Noticed in 3 days</span>
+        </div>
+        <div class="rc-author">
+          <div class="rc-avatar">L</div>
+          <div><strong>Laura T.</strong><span>🇦🇺 Australia</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-inner section-inner--narrow">
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-h2">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="acc">
+        <button class="acc__head" onclick="toggleAcc(this)">
+          How long does one charge last?
+          <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc__body">
+          <p>One full charge (approx. 90 minutes via USB-C) gives you up to 2 hours of continuous use. For daily use of 1–2 minutes morning and evening, a single charge lasts 30–60 days.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc__head" onclick="toggleAcc(this)">
+          What liquids can I use in NanoGlow?
+          <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc__body">
+          <p>You can use any water-based liquid — thermal water, toner, hyaluronic serum, rose water, or plain distilled water. Avoid oil-based liquids, as they can clog the atomizer.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc__head" onclick="toggleAcc(this)">
+          Is it safe for sensitive skin?
+          <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc__body">
+          <p>Absolutely. The NanoGlow uses no heat, no harsh pressure, and no chemicals. The body is made from BPA-free, food-grade materials. Safe for all skin types including sensitive and acne-prone skin.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc__head" onclick="toggleAcc(this)">
+          When will I see results?
+          <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc__body">
+          <p>Most customers notice softer, more hydrated skin within the first 5–7 days of consistent use. Makeup setting improvement is noticed from the very first use. Best results after 4 weeks of daily use.</p>
+        </div>
+      </div>
+      <div class="acc">
+        <button class="acc__head" onclick="toggleAcc(this)">
+          Can I use it over makeup?
+          <svg class="acc__arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc__body">
+          <p>Yes! The NanoGlow is designed to work over makeup without disturbing it. Hold 20–25 cm away and mist for 5–10 seconds for a professional setting spray effect.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__inner">
+    <div class="sticky-cta__info">
+      <strong>NanoGlow Spray Pro</strong>
+      <span id="stickyPrice">$19.99</span>
+    </div>
+    <button class="cta-btn cta-btn--sm" onclick="addToCart()">ADD TO CART</button>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__head">
+    <h3>Your Cart</h3>
+    <button onclick="closeCart()" class="icon-btn">✕</button>
+  </div>
+  <div class="cart-drawer__body" id="cartBody">
+    <p class="cart-empty">Your cart is empty.</p>
+  </div>
+  <div class="cart-drawer__foot" id="cartFoot" style="display:none">
+    <div class="cart-total">Total <strong id="cartTotal">$0.00</strong></div>
+    <button class="cta-btn" onclick="checkout()">CHECKOUT</button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal" id="modal">
+  <div class="modal__box">
+    <div class="modal__icon">✓</div>
+    <h3>Order Placed!</h3>
+    <p>Thank you! Our team will contact you within 15 minutes to confirm your order.</p>
+    <button class="cta-btn" onclick="closeModal()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="logo logo--white">NILIST<span>.</span></span>
+        <p>Premium skincare technology for everyday beauty routines.</p>
+      </div>
       <div class="footer__links">
-        <a href="#">Privacy Policy</a>
+        <h5>Support</h5>
+        <a href="#">FAQ</a>
         <a href="#">Shipping Policy</a>
-        <a href="#">Returns &amp; Refunds</a>
-        <a href="#">Contact</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
       </div>
-      <p class="footer__copy">&copy; 2026 Nilist. All rights reserved.</p>
+      <div class="footer__links">
+        <h5>Company</h5>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Reviews</a>
+      </div>
     </div>
-  </footer>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Nilist. All rights reserved.</p>
+      <div class="pay-icons">
+        <span>VISA</span><span>Mastercard</span><span>PayPal</span><span>Apple Pay</span><span>G Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

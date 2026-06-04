@@ -4,12 +4,12 @@ let selectedBundle = 1;
 let cartItems = [];
 
 const bundles = {
-  1: { qty: 1, price: 19.99, old: 39.99 },
-  2: { qty: 2, price: 34.99, old: 79.98 },
-  3: { qty: 3, price: 47.99, old: 119.97 },
+  1: { label: '1 Tub', price: 34.99, old: 56.00 },
+  2: { label: '2 Tubs', price: 64.40, old: 112.00 },
+  3: { label: '3 Tubs', price: 89.99, old: 168.00 },
 };
 
-const colorLabels = { blue: 'Blue', pink: 'Pink' };
+let selectedSize = 'Under 11kg';
 
 /* ===== BUNDLE ===== */
 function selectBundle(n) {
@@ -25,17 +25,12 @@ function selectBundle(n) {
   document.getElementById('stickyPrice').textContent = '$' + b.price.toFixed(2);
 }
 
-/* ===== COLOR ===== */
-function pickColor(color) {
-  selectedColor = color;
-  document.getElementById('swBlue').classList.toggle('active', color === 'blue');
-  document.getElementById('swPink').classList.toggle('active', color === 'pink');
-  document.getElementById('colorLabel').textContent = colorLabels[color];
-
-  const src = `images/${color}.png`;
-  const img = document.getElementById('mainImg');
-  img.style.opacity = '0';
-  setTimeout(() => { img.src = src; img.style.opacity = '1'; }, 200);
+/* ===== DOG SIZE ===== */
+function pickSize(btn, size) {
+  selectedSize = size;
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sizeLabel').textContent = size;
 }
 
 /* ===== GALLERY THUMBS ===== */
@@ -70,9 +65,9 @@ function addToCart() {
     existing.qty++;
   } else {
     cartItems.push({
-      key, color: selectedColor, bundle: selectedBundle,
+      key, bundle: selectedBundle,
       qty: 1, price: b.price,
-      label: `${colorLabels[selectedColor]} × ${b.qty} device${b.qty > 1 ? 's' : ''}`
+      label: `${b.label} — Dog size: ${selectedSize}`
     });
   }
   renderCart();
@@ -98,7 +93,7 @@ function renderCart() {
 
   body.innerHTML = cartItems.map((item, idx) => `
     <div class="cart-item">
-      <img src="images/${item.color}.png" alt="${item.label}"/>
+      <img src="images/2026-06-05 023725.png" alt="${item.label}"/>
       <div class="cart-item__info">
         <div class="cart-item__name">NanoGlow Spray Pro</div>
         <div class="cart-item__meta">${item.label} &bull; Qty: ${item.qty}</div>

@@ -40,11 +40,25 @@ function pickColor(color) {
 
 /* ===== GALLERY THUMBS ===== */
 function setImg(el, src) {
-  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.strip-thumb').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   const img = document.getElementById('mainImg');
   img.style.opacity = '0';
   setTimeout(() => { img.src = src; img.style.opacity = '1'; }, 200);
+}
+
+/* ===== STRIP SCROLL ===== */
+function slideStrip(dir) {
+  const strip = document.getElementById('strip');
+  strip.scrollBy({ left: dir * 160, behavior: 'smooth' });
+}
+
+/* ===== TABS ===== */
+function switchTab(btn, panelId) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
 }
 
 /* ===== CART ===== */

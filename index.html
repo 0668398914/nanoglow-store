@@ -53,36 +53,101 @@
 
     <!-- GALLERY -->
     <div class="gallery" id="gallery">
-      <div class="gallery__thumbs" id="thumbs">
-        <button class="thumb active" onclick="setImg(this,'images/blue.png')"><img src="images/blue.png" alt=""/></button>
-        <button class="thumb" onclick="setImg(this,'images/pink.png')"><img src="images/pink.png" alt=""/></button>
-        <button class="thumb" onclick="setImg(this,'images/blue.png')"><img src="images/blue.png" alt=""/></button>
-        <button class="thumb" onclick="setImg(this,'images/pink.png')"><img src="images/pink.png" alt=""/></button>
+
+      <!-- Top: main image + 3 feature cards -->
+      <div class="gallery__top">
+        <div class="gallery__main">
+          <img src="images/blue.png" alt="NanoGlow Spray Pro" id="mainImg"/>
+          <div class="gallery__overlay">
+            <p>Join <span>10,000+</span><br/>Customers Who<br/>Trust NanoGlow</p>
+            <div class="gallery__pill">+ Save Up To 20% When You Bundle</div>
+          </div>
+        </div>
+        <div class="gallery__cards">
+          <div class="gallery__card">
+            <div class="gallery__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <span>Hydration<br/>&amp; Glow</span>
+          </div>
+          <div class="gallery__card">
+            <div class="gallery__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span>Over 10,000<br/>Customers Helped</span>
+          </div>
+          <div class="gallery__card">
+            <div class="gallery__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span>365 Day Money<br/>Back Promise</span>
+          </div>
+        </div>
       </div>
-      <div class="gallery__main">
-        <div class="gallery__badge">SALE</div>
-        <img src="images/blue.png" alt="NanoGlow Spray Pro" id="mainImg"/>
+
+      <!-- Thumbnail strip -->
+      <div class="gallery__strip-wrap">
+        <button class="strip-arrow strip-arrow--prev" onclick="slideStrip(-1)">&#8592;</button>
+        <div class="gallery__strip" id="strip">
+          <button class="strip-thumb active" onclick="setImg(this,'images/blue.png')"><img src="images/blue.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/pink.png')"><img src="images/pink.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023357.png')"><img src="images/2026-06-05 023357.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023433.png')"><img src="images/2026-06-05 023433.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023455.png')"><img src="images/2026-06-05 023455.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023513.png')"><img src="images/2026-06-05 023513.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023529.png')"><img src="images/2026-06-05 023529.png" alt=""/></button>
+          <button class="strip-thumb" onclick="setImg(this,'images/2026-06-05 023613.png')"><img src="images/2026-06-05 023613.png" alt=""/></button>
+        </div>
+        <button class="strip-arrow strip-arrow--next" onclick="slideStrip(1)">&#8594;</button>
       </div>
+
     </div>
 
     <!-- DETAILS -->
     <div class="details">
 
-      <!-- Stars -->
+      <h1 class="details__title">NanoGlow Spray Pro — 120 ultra-fine mist sessions for hydration, glow &amp; makeup setting</h1>
+
+      <!-- Sold badge + Stars -->
+      <div class="sold-badge">1 Sold Every 3 Minutes</div>
       <div class="details__rating">
         <div class="stars">★★★★★</div>
-        <span>4.9/5 &nbsp;|&nbsp; <a href="#reviews">2,284 Reviews</a></span>
+        <span>4.9/5 Rated by <strong>2,284+</strong> Customers</span>
       </div>
 
-      <h1 class="details__title">NanoGlow Spray Pro</h1>
-      <p class="details__sub">120 ultra-fine mist sessions for hydration, glow &amp; makeup setting.</p>
+      <p class="details__sub">Ultra-fine nano-mist technology that deeply hydrates skin, sets makeup and gives an instant glow — all in one compact, rechargeable device.</p>
 
-      <!-- Expert -->
-      <div class="expert-quote">
-        <div class="expert-quote__avatar">👩‍⚕️</div>
-        <div>
-          <p>"The NanoGlow uses 0.26 µm particles — finer than most professional devices. It absorbs instantly without disturbing makeup or leaving residue."</p>
-          <strong>Dr. Emma Clarke, Certified Dermatologist</strong>
+      <!-- Tell Me About tabs -->
+      <div class="tabs-label">Tell Me About:</div>
+      <div class="tabs">
+        <button class="tab" onclick="switchTab(this,'tab-expert')">Expert<br/>Reviewed</button>
+        <button class="tab" onclick="switchTab(this,'tab-ingredients')">Ingredients</button>
+        <button class="tab" onclick="switchTab(this,'tab-usage')">Usage<br/>Guide</button>
+        <button class="tab active" onclick="switchTab(this,'tab-benefits')">Benefits</button>
+      </div>
+      <div class="tab-panel" id="tab-expert">
+        <p style="padding:16px;color:var(--mid);font-size:14px;line-height:1.8">"The NanoGlow uses 0.26 µm particles — finer than most professional devices. It absorbs instantly without disturbing makeup or leaving residue." <br/><strong style="color:var(--orange)">— Dr. Emma Clarke, Certified Dermatologist</strong></p>
+      </div>
+      <div class="tab-panel" id="tab-ingredients">
+        <ul style="padding:16px;color:var(--mid);font-size:14px;line-height:2;list-style:none">
+          <li>+ Piezoelectric atomizer plate (0.26 µm)</li>
+          <li>+ Anodized aluminum body</li>
+          <li>+ Food-grade BPA-free reservoir</li>
+          <li>+ USB-C rechargeable battery</li>
+          <li>+ Whisper-quiet motor (&lt;45 dB)</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="tab-usage">
+        <p style="padding:16px;color:var(--mid);font-size:14px;line-height:1.8">Fill the 30 ml tank with toner, serum or thermal water. Hold 15–20 cm from face, press button. Mist for 15–30 seconds. Use morning &amp; night.</p>
+      </div>
+      <div class="tab-panel active" id="tab-benefits">
+        <div class="benefits-check-grid">
+          <div class="bc-item"><span class="bc-icon">✓</span> Deep Hydration</div>
+          <div class="bc-item"><span class="bc-icon">✓</span> Makeup Setting</div>
+          <div class="bc-item"><span class="bc-icon">✓</span> Instant Glow</div>
+          <div class="bc-item"><span class="bc-icon">✓</span> Cooling Relief</div>
+          <div class="bc-item"><span class="bc-icon">✓</span> Whisper-Quiet</div>
+          <div class="bc-item"><span class="bc-icon">✓</span> 2-Hr Battery Life</div>
         </div>
       </div>
 
